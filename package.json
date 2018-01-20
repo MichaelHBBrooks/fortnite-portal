@@ -13,5 +13,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --config ./config/.prettierrc --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.1",
+    "prettier": "^1.10.2"
   }
 }
