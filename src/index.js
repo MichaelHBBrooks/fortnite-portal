@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import Full from "./containers/Full/";
 
+import "./scss/style.scss";
+
 ReactDOM.render(
     <Router>
         <Switch>
