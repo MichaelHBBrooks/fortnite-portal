@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardBody, Col, Input, Row } from "reactstrap";
+import ranged from "../../data/ranged.json";
 
 import WeaponFilter from "../../components/WeaponFilter/";
 
@@ -65,6 +66,7 @@ export default class RangedDamage extends React.Component {
                         />
                     </Col>
                 </Row>
+                {ranged.rifles[0]["Burst Assault Rifle"]}
                 <Row>
                     <Col sm="3">
                         <Card>

@@ -1,0 +1,74 @@
+{
+    "rifles": [
+        {
+            "template": "Burst Assault Rifle",
+            "type": "Assault Rifle",
+            "description":
+                "Assault Weapon: Burst. An assault rifle that fires tight bursts that allow for precise targeting in mobile mid-range engagements. Deals good damage, but consumes its magazine very quickly.",
+            "base": {
+                "Dmg": 21,
+                "critChance": "5%",
+                "critDmg": "50%",
+                "fireRate": 8.18181,
+                "magSize": 30,
+                "range": 4096,
+                "reload": 2.3,
+                "ammoCost": 1,
+                "impact": 50
+            },
+            "ammo": "light",
+            "variations": [
+                {
+                    "name": "Burst Assault Rifle",
+                    "rarity": "common",
+                    "materials": [
+                        { "material": "Blast Powder", "amount": 5 },
+                        { "material": "mechanized parts", "amount": 12 },
+                        { "material": "ore", "amount": 1 },
+                        { "material": "Duct Tape", "amount": 2 }
+                    ]
+                },
+                {
+                    "name": "Scalpel",
+                    "rarity": "uncommon",
+                    "materials": [
+                        { "material": "Blast Powder", "amount": 8 },
+                        { "material": "mechanized parts", "amount": 12 },
+                        { "material": "ore", "amount": 3 },
+                        { "material": "Duct Tape", "amount": 4 }
+                    ]
+                },
+                {
+                    "name": "Razor",
+                    "rarity": "rare",
+                    "materials": [
+                        { "material": "Blast Powder", "amount": 10 },
+                        { "material": "mechanized parts", "amount": 18 },
+                        { "material": "ore", "amount": 1 },
+                        { "material": "Rotating Gizmo", "amount": 1 }
+                    ]
+                },
+                {
+                    "name": "Razorwire",
+                    "rarity": "epic",
+                    "materials": [
+                        { "material": "Blast Powder", "amount": 12 },
+                        { "material": "mechanized parts", "amount": 24 },
+                        { "material": "ore", "amount": 8 },
+                        { "material": "Rotating Gizmo", "amount": 3 }
+                    ]
+                },
+                {
+                    "name": "Razorblade",
+                    "rarity": "legendary",
+                    "materials": [
+                        { "material": "Blast Powder", "amount": 15 },
+                        { "material": "mechanized parts", "amount": 30 },
+                        { "material": "ore", "amount": 11 },
+                        { "material": "Active Powercell", "amount": 1 }
+                    ]
+                }
+            ]
+        }
+    ]
+}
