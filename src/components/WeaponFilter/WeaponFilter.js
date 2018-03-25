@@ -1,7 +1,23 @@
 import React from "react";
-import { Card, CardBody, CardHeader, Col, FormGroup, Input, Label, Row } from "reactstrap";
+import {
+    Card,
+    CardBody,
+    CardHeader,
+    Col,
+    Collapse,
+    FormGroup,
+    Input,
+    Label,
+    Row
+} from "reactstrap";
 
 class WeaponFilter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { filterCollapse: false };
+        this.handleCollapse = this.handleCollapse.bind(this);
+    }
+
     handleChange = event => {
         let newFilters = this.props.filters;
         const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
@@ -12,6 +28,10 @@ class WeaponFilter extends React.Component {
         }
         this.props.handleChange("filters", newFilters);
     };
+
+    handleCollapse() {
+        this.setState({ filterCollapse: !this.state.filterCollapse });
+    }
 
     render() {
         const rarity = this.props.filters.rarity;
@@ -66,36 +86,43 @@ class WeaponFilter extends React.Component {
             </div>
         );
 
+        const filterCollapseIcon = this.state.filterCollapse
+            ? "fa-angle-double-down"
+            : "fa-angle-double-up";
+
         return (
             <Card>
                 <CardHeader>
-                    <h1>Filter</h1>
+                    <i className={`fa ${filterCollapseIcon} fa-lg`} onClick={this.handleCollapse} />
+                    <strong>Filter</strong>
                 </CardHeader>
-                <CardBody>
-                    <FormGroup row>
-                        <Col md="4">
-                            <Rarity />
-                        </Col>
-                        <Col md="4">
-                            <RangedWeapon />
-                        </Col>
-                        <Col md="4">
-                            <Ammo />
-                        </Col>
-                    </FormGroup>
-                    <Row>
-                        <Col>
-                            <Label for="textMatch">Text Match</Label>
-                            <Input
-                                id="searchText"
-                                type="text"
-                                value={this.props.filters.text}
-                                onChange={this.handleChange}
-                                maxLength="300"
-                            />
-                        </Col>
-                    </Row>
-                </CardBody>
+                <Collapse isOpen={this.state.filterCollapse}>
+                    <CardBody>
+                        <FormGroup row>
+                            <Col md="4">
+                                <Rarity />
+                            </Col>
+                            <Col md="4">
+                                <RangedWeapon />
+                            </Col>
+                            <Col md="4">
+                                <Ammo />
+                            </Col>
+                        </FormGroup>
+                        <Row>
+                            <Col>
+                                <Label for="textMatch">Text Match</Label>
+                                <Input
+                                    id="searchText"
+                                    type="text"
+                                    value={this.props.filters.text}
+                                    onChange={this.handleChange}
+                                    maxLength="300"
+                                />
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Collapse>
             </Card>
         );
     }
