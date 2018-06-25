@@ -9,11 +9,68 @@ https://docs.google.com/spreadsheets/d/1yHZGNiMUAK_D2VPxLxzU7EPqvuLQ7PsXCxttZBxd
 
 **ranged_damage = [base_damage \* rarity_mod \* evolution_mod \* crystal_mod] \* pellet_count \* level_mod \* offense_mod \* perks_mod**
 
+### The Multipliers
+
+#### base_damage
+The damage of the common (gray) version of the weapon. For pellet weapons it's the damage of a single pellet.
+
+#### pellet_count
+The number of pellets the weapon shoots per shot.
+
+#### rarity_mod
+This is a coeffecient applied based on the rarity of the weapon. Each rarity above Common adds 0.125.
+
+| Rarity    | Color  | Coefficient |
+|-----------|--------|-------------|
+| Common    | Gray   | 1           |
+| Uncomon   | Green  | 1.125       |
+| Rare      | Blue   | 1.25        |
+| Epic      | Purple | 1.375       |
+| Legendary | Orange | 1.5         |
+
+#### evolution_mod
+Starts at 1 and increases by 0.2 for every star after that.
+
+| Stars      | Coefficient  |
+|------------|--------------|
+| \*         | 1            |
+| \*\*       | 1.2          |
+| \*\*\*     | 1.4          |
+| \*\*\*\*   | 1.6          |
+| \*\*\*\*\* | 1.8          |
+
+#### crystal_mod
+Once evolved to the crystal form of the evolution, the coefficient changes from 1 to 1.2.
+
+| Material    | Coefficient  |
+|-------------|--------------|
+| Copper      | 1            |
+| Silver      | 1            |
+| Malachite   | 1            |
+| Obsidian    | 1            |
+| Shadowshard | 1.2          |
+| Brightcore  | 1            |
+| Sunbeam     | 1.2          |
+
+#### level_mod
+
+Starts at 1 and increases by 0.05 each time the schematic levels up. Note that a 20/20 and a 20/30 weapon have the same modifier (1.95) but the second one is higher due to the evolution modifier of 1.4 instead of 1.2.
+
+#### offense_mod
+The ranged damage multiplier coming from the offense FORT stat and any survivor squad set bonuses.
+
+**Formula:** [1 + (offense + set_bonuses) / 100]
+
+#### perks_mod
+The sum of all damage perks from the weapon, main hero, support hero, buffs (eg. war cry).
+
+**Formula:** [1 + sum(perk1, perk2, ..., perk*N*)]
+
 ## Razorblade Example
 
 ### Perks
 
-**Grey weapon base damage:** 21
+**Gray weapon base damage:** 21
 
 | Level | Perk                                                                 |
 | ----- | -------------------------------------------------------------------- |
