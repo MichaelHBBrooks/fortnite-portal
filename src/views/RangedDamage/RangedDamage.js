@@ -1,8 +1,12 @@
 import React from "react";
 import { Card, CardBody, Col, Input, Row } from "reactstrap";
-import ranged from "../../data/ranged.json";
 
 import WeaponFilter from "../../components/WeaponFilter/";
+import WeaponCard from "../../components/WeaponCard/";
+import PlayerCard from "../../components/PlayerCard/";
+
+import ranged from "../../data/ranged.json";
+import player from "../../data/player.json";
 
 export default class RangedDamage extends React.Component {
     constructor(props) {
@@ -66,7 +70,7 @@ export default class RangedDamage extends React.Component {
                         />
                     </Col>
                 </Row>
-                {ranged.rifles[0]["Burst Assault Rifle"]}
+                {ranged.rifles[0].template}
                 <Row>
                     <Col sm="3">
                         <Card>
@@ -88,6 +92,16 @@ export default class RangedDamage extends React.Component {
                                 <pre>{`${helpText}`}</pre>
                             </CardBody>
                         </Card>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <PlayerCard data={player} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <WeaponCard weapon={ranged.rifles[0]} rarity="legendary" />
                     </Col>
                 </Row>
             </div>

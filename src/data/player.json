@@ -1,0 +1,31 @@
+{
+    "name": "Jinieren",
+    "simple": {
+        "offense": 1791,
+        "rngDmgBonus": 5
+    },
+    "squads": [
+        {
+            "name": "EMT Squad",
+            "stat": "fortitude",
+            "lead": {
+                "level": 30,
+                "stars": 3,
+                "role": "Doctor",
+                "personality": "Competitive"
+            },
+            "members": [
+                {
+                    "level": 31,
+                    "stars": 3,
+                    "personality": "Competitive",
+                    "bonus": "Shield Regen Bonus"
+                }
+            ]
+        },
+        {
+            "name": "Fire Team Alpha",
+            "stat": "offense"
+        }
+    ]
+}

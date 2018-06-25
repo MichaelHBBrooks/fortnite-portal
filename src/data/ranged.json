@@ -6,7 +6,7 @@
             "description":
                 "Assault Weapon: Burst. An assault rifle that fires tight bursts that allow for precise targeting in mobile mid-range engagements. Deals good damage, but consumes its magazine very quickly.",
             "base": {
-                "Dmg": 21,
+                "dmg": 21,
                 "critChance": "5%",
                 "critDmg": "50%",
                 "fireRate": 8.18181,

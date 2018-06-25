@@ -1,0 +1,6 @@
+{
+    "name": "player-card",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./PlayerCard.js"
+}
