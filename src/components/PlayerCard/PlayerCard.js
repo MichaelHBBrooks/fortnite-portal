@@ -1,11 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardHeader, Col, FormGroup, Input, Label } from "reactstrap";
 
-export default class Playercard extends React.Component {
-    // constructor(props) {
-    //     super(this);
-    // }
-
+export default class PlayerCard extends React.Component {
     render() {
         const player = this.props.data;
         return (
@@ -17,13 +13,23 @@ export default class Playercard extends React.Component {
                     <FormGroup row>
                         <Label sm={2}>Offense</Label>
                         <Col>
-                            <Input type="text" readOnly value={player.simple.offense} />
+                            <Input
+                                id="playerOffense"
+                                type="number"
+                                value={player.offense}
+                                onChange={this.props.handleChange}
+                            />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label sm={2}>Squad Ranged Damage Bonus</Label>
                         <Col>
-                            <Input type="text" readOnly value={player.simple.rngDmgBonus} />
+                            <Input
+                                id="playerRngDmgBonus"
+                                type="number"
+                                value={player.rngDmgBonus}
+                                onChange={this.props.handleChange}
+                            />
                         </Col>
                     </FormGroup>
                 </CardBody>

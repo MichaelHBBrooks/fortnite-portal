@@ -27,5 +27,18 @@
             "name": "Fire Team Alpha",
             "stat": "offense"
         }
+    ],
+    "schematics": [
+        {
+            "type": "Razorblade",
+            "perks": [
+                { "name": "critDmg", "level": 1 },
+                { "name": "magSize", "level": 1 },
+                { "name": "energy", "level": 3 },
+                { "name": "dmg", "level": 3 },
+                { "name": "dmgVsAfflicted", "level": 3 },
+                { "name": "affliction", "level": 1 }
+            ]
+        }
     ]
 }

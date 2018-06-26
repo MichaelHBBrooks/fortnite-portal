@@ -14,13 +14,39 @@ import {
 class WeaponFilter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { filterCollapse: false };
+        this.state = { filterCollapse: true };
         this.handleCollapse = this.handleCollapse.bind(this);
     }
+
+    // handleChangeNew = event => {
+    //     let newFilters = {...this.props.filters,};
+    //     const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+
+    //     if (event.target.name) {
+    //         //     console.log(
+    //         //         "name: " +
+    //         //             event.target.name +
+    //         //             ", old value: " +
+    //         //             this.props.filters[event.target.name][event.target.id]
+    //         //     );
+    //         //     console.log("target contents: " + JSON.stringify(newFilters));
+    //         //     newFilters[event.target.name][event.target.id] = value;
+    //         //     console.log(
+    //         //         "name: " +
+    //         //             event.target.name +
+    //         //             ", new value: " +
+    //         //             this.props.filters[event.target.name][event.target.id]
+    //         //     );
+    //     } else {
+    //         newFilters[event.target.id] = value;
+    //     }
+    //     // this.props.handleChange("filters", newFilters);
+    // };
 
     handleChange = event => {
         let newFilters = this.props.filters;
         const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+
         if (event.target.name) {
             newFilters[event.target.name][event.target.id] = value;
         } else {
