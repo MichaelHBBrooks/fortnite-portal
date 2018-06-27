@@ -5,6 +5,7 @@ import WeaponFilter from "../../components/WeaponFilter/";
 import WeaponCard from "../../components/WeaponCard/";
 import PlayerCard from "../../components/PlayerCard/";
 import PerksCard from "../../components/PerksCard/";
+import { damageCalc, getCritChance } from "../../libs/calculations";
 
 import rangedData from "../../data/ranged.json";
 import playerData from "../../data/player.json";
@@ -198,7 +199,32 @@ export default class RangedDamage extends React.Component {
                     </Row>
                     <Row>
                         <Col>
-                            {/* <DamageCalculator player={player} weapon={weapon} perks={perks} /> */}
+                            <Card>
+                                <CardBody>
+                                    <h1>
+                                        {/* <DamageCalculator player={player} weapon={weapon} perks={perks} /> */}
+                                        Damage:{" "}
+                                        {Math.round(
+                                            damageCalc(
+                                                21,
+                                                "legendary",
+                                                3,
+                                                false,
+                                                1,
+                                                30,
+                                                2346,
+                                                5,
+                                                this.state.schematicPerks,
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ) * 10
+                                        ) / 10}
+                                    </h1>
+                                    <h1>Crit Chance: {getCritChance(56, true)}</h1>
+                                </CardBody>
+                            </Card>
                         </Col>
                     </Row>
                 </div>
