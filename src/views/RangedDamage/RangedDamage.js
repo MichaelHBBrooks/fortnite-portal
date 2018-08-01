@@ -215,14 +215,11 @@ export default class RangedDamage extends React.Component {
                                                 2346,
                                                 5,
                                                 this.state.schematicPerks,
-                                                "",
-                                                "",
-                                                "",
-                                                ""
+                                                []
                                             ) * 10
                                         ) / 10}
                                     </h1>
-                                    <h1>Crit Chance: {getCritChance(56, true)}</h1>
+                                    <h1>Crit Chance: {getCritChance(48, true)}</h1>
                                 </CardBody>
                             </Card>
                         </Col>

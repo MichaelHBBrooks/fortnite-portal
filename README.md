@@ -90,8 +90,8 @@ The sum of all damage perks from the weapon, main hero, support hero, buffs (eg.
 **ranged_damage = [base_damage \* rarity_mod \* evolution_mod \* crystal_mod] \* pellet_count \* level_mod \* offense_mod \* perks_mod**
 
 **base damage:** 21  
-**rarity_mod:** (1 + (5 - 1) _ 0.125) = 1.5  
-**evolution_mod:** (1 + (3 - 1) _ 0.2) = 1.4  
+**rarity_mod:** (1 + (5 - 1) \* 0.125) = 1.5  
+**evolution_mod:** (1 + (3 - 1) \* 0.2) = 1.4  
 **crystal_mod:** 1  
 **pellet_count:** 1  
 **level_mod:** (1 + (30 - 1) \* 0.05) = 2.45  

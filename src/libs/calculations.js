@@ -12,9 +12,6 @@
  *                         research).
  * @param {number} squadBonus The sum of squad ranged attack bonuses.
  * @param {Array} perks An array of objects representing the weapon's perks.
- * @param {string} mainHero The class of the hero in the main slot (eg. "Master Grenadier").
- * @param {string} supportHero The class of the hero in the support slot.
- * @param {string} tacticalHero The class of the hero in the tactical slot.
  * @param {Array} buffs An array of buffs being applied to the player.
  */
 export function damageCalc(
@@ -27,9 +24,6 @@ export function damageCalc(
     offense,
     squadBonus,
     perks,
-    mainHero,
-    supportHero,
-    tacticalHero,
     buffs
 ) {
     const rarityMod = getRarityMod(rarity);
@@ -37,7 +31,7 @@ export function damageCalc(
     const crystalMod = getCrystalMod(crystal);
     const levelMod = getLevelMod(weaponLevel);
     const offenseMod = getOffenseMod(offense, squadBonus);
-    const perksMod = getPerksMod(perks, mainHero, supportHero, tacticalHero, buffs);
+    const perksMod = getPerksMod(perks, buffs);
     // console.log("baseDmg: " + baseDmg);
     // console.log("rarityMod: " + rarityMod);
     // console.log("evolutionMod: " + evolutionMod);
@@ -87,7 +81,7 @@ function getOffenseMod(offense, squadBonus) {
     return 1 + (offense + squadBonus) / 100;
 }
 
-function getPerksMod(perks, mainHero, supportHero, tacticalHero, buffs) {
+function getPerksMod(perks, buffs) {
     let perksSum = perks.reduce((accumulator, current) => {
         if (current.name === "dmg") {
             return accumulator + 10 + (current.level - 1) * 5;
